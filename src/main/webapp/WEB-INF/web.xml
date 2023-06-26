@@ -4,6 +4,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	id="WebApp_ID">
 	<display-name>Modulo6</display-name>
+	
+	<!-- CLASES -->
 	<servlet>
 		<description>
 		</description>
@@ -32,6 +34,15 @@
 		<servlet-name>CriterioEvaluacion</servlet-name>
 		<servlet-class>controlador.CriterioEvaluacion</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ListaCapacitaciones</display-name>
+		<servlet-name>ListaCapacitaciones</servlet-name>
+		<servlet-class>controlador.ListaCapacitaciones</servlet-class>
+	</servlet>
+	
+	<!-- MAPPING -->
 	<servlet-mapping>
 		<servlet-name>Inicio</servlet-name>
 		<url-pattern>/inicio</url-pattern>
@@ -48,6 +59,12 @@
 		<servlet-name>CriterioEvaluacion</servlet-name>
 		<url-pattern>/evaluacionuno</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListaCapacitaciones</servlet-name>
+		<url-pattern>/listacapacitaciones</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Prioridades para el inicio -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

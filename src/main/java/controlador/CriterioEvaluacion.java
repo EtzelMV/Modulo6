@@ -29,7 +29,7 @@ public class CriterioEvaluacion extends HttpServlet {
         response.setContentType("application/pdf");
 
         // Obtén la ruta del archivo PDF
-        String rutaPDF = "files/CriterioDeEvaluacion1.pdf";
+        String rutaPDF = "files/CriterioDeEvaluacion2p1.pdf";
 
         // Envía el archivo PDF como respuesta
         response.sendRedirect(rutaPDF);

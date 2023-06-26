@@ -2,7 +2,6 @@ package controlador;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,11 +26,11 @@ public class Contacto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// Obtener el objeto RequestDispatcher para el JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("views/contacto.jsp");
+		// Establecer la página específica a incluir en la plantilla
+	    request.setAttribute("contenido", "contacto.jsp");
 
-		// Redirigir la solicitud al JSP
-		dispatcher.forward(request, response);
+	    // Redirigir a la vista
+	    request.getRequestDispatcher("views/templateMaven.jsp").forward(request, response);
 	}
 
 	/**

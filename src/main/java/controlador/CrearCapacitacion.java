@@ -27,11 +27,11 @@ public class CrearCapacitacion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// Obtener el objeto RequestDispatcher para el JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("views/crearCapacitacion.jsp");
+		// Establecer la página específica a incluir en la plantilla
+	    request.setAttribute("contenido", "crearCapacitacion.jsp");
 
-		// Redirigir la solicitud al JSP
-		dispatcher.forward(request, response);
+	    // Redirigir a la vista
+	    request.getRequestDispatcher("views/templateMaven.jsp").forward(request, response);
 	}
 
 	/**
