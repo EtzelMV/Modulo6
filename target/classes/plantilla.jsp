@@ -15,7 +15,7 @@
 	<header class="bg-dark text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="home">Grupal 03.1</a>
+                <a class="navbar-brand" href="home">Grupal 4</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -71,7 +71,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" 
-                            href="https://drive.google.com/file/d/1E-mRFQRe_XzxtE70NqGBzwwNprBrug7c/view?usp=sharing" 
+                            href="https://drive.google.com/file/d/1FxqHHSIKD_ERiF6dMJXfYUQfE7Ji_iBE/view?usp=drive_link" 
                             target="_blank">Criterio de evaluación</a>
                         </li>
                     </ul>

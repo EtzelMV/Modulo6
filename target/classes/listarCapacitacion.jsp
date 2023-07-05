@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <%@ page import="java.util.List"%>
-<%@ page import="com.etzel.app.Capacitacion"%>
+<%@ page import="com.etzel.app.modelos.Capacitacion"%>
 
 <div class="container text-center">
     <h1>Lista de Capacitaciones</h1>

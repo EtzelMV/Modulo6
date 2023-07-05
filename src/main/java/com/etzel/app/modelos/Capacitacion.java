@@ -1,4 +1,4 @@
-package com.etzel.app;
+package com.etzel.app.modelos;
 
 /**
  * @author 

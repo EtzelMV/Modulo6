@@ -6,7 +6,7 @@
 	<p class="h1 text-center">Crear Capacitación</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
-            <form class="custom-form" method="post" action="listacapacitaciones">
+            <form class="custom-form" method="post" action="guardarcapacitacion">
 				<div class="mb-3">
 					<label for="nombreCapacitacion" class="form-label"><span class="text-danger">*</span>Capacitación:</label>
 					<input type="text" class="form-control" placeholder="Ingrese el nombre de la capacitación..." 

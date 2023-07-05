@@ -1,4 +1,4 @@
-package com.etzel.app;
+package com.etzel.app.controladores;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -12,22 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author
- * Etzel M. Valderrama
- * Ricardo Silva
- * Fernando Bermudez
- * Matías Muñoz
- * 
- * Controlador para mostrar el formulario de contacto.
+ * Handles requests for the application home page.
  */
 @Controller
-public class Contacto {
+public class HomeController {
 	
-private static final Logger logger = LoggerFactory.getLogger(Contacto.class);
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/contacto", method = RequestMethod.GET)
-	public String formularioContacto(Locale locale, Model model) {
-		logger.info("Mostrando formulario de contacto.");
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		logger.info("Bienvenido Etzel!!! El idioma local es {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -37,7 +34,7 @@ private static final Logger logger = LoggerFactory.getLogger(Contacto.class);
 		model.addAttribute("serverTime", formattedDate );
 		
 		// Establecer la página a incluir en la plantilla
-		model.addAttribute("contenido", "contacto.jsp");
+		model.addAttribute("contenido", "home.jsp");
 		
 		return "plantilla";
 	}
