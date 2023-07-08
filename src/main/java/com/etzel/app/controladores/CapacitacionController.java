@@ -52,8 +52,8 @@ public class CapacitacionController {
         return "plantilla";
     }
     
-    @RequestMapping(value = "/crearcapacitacion", method = RequestMethod.GET)
-    public String crearCapacitacion(Locale locale, Model model) {
+    @RequestMapping(value = "/formcapacitacion", method = RequestMethod.GET)
+    public String 	formCapacitacion(Locale locale, Model model) {
 		logger.info("Mostrando formulario para crear una capacitacion.");
 		
 		fechaSistema(locale, model);
@@ -64,8 +64,8 @@ public class CapacitacionController {
 		return "plantilla";
 	}
 
-    @RequestMapping(value = "/guardarcapacitacion", method = RequestMethod.POST)
-    public String guardarCapacitacion(Capacitacion capacitacion, HttpServletRequest request, 
+    @RequestMapping(value = "/crearcapacitacion", method = RequestMethod.POST)
+    public String crearCapacitacion(Capacitacion capacitacion, HttpServletRequest request, 
     		HttpServletResponse response, Locale locale, Model model) {
     	
     	// Obtener los datos del formulario
@@ -84,10 +84,8 @@ public class CapacitacionController {
         	return listarCapacitaciones(locale, model);
         } else {
         	fechaSistema(locale, model);
-        	// Establecer la pagina a incluir en la plantilla
-    		model.addAttribute("contenido", "crearCapacitacion.jsp");
     		
-    		return "plantilla";
+    		return formCapacitacion(locale, model);
         }
     }
     

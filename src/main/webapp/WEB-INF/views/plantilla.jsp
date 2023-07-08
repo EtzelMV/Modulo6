@@ -15,7 +15,7 @@
 	<header class="bg-dark text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="home">Grupal 4</a>
+                <a class="navbar-brand" href="home">Grupal 4.1</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                             <a class="nav-link" href="home">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="crearcapacitacion">Crear Capacitacion</a>
+                            <a class="nav-link" href="formcapacitacion">Crear Capacitacion</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="listacapacitaciones">Listar Capacitaciones</a>
@@ -71,7 +71,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" 
-                            href="https://drive.google.com/file/d/1FxqHHSIKD_ERiF6dMJXfYUQfE7Ji_iBE/view?usp=drive_link" 
+                            href="https://drive.google.com/file/d/1jyIbdkHDRAKJoTHpmsSxTNCrUeT2W4hq/view?usp=sharing" 
                             target="_blank">Criterio de evaluación</a>
                         </li>
                     </ul>
