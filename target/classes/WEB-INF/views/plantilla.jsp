@@ -40,7 +40,7 @@
         </nav>
     </header>
 
-	<main class="mb-3" style="min-height: 530px;">
+	<main class="mb-3" style="min-height: 539px;">
 		<jsp:include page="${contenido}"/>
 	</main>
 	

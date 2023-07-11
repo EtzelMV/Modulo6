@@ -6,7 +6,7 @@
 	<p class="h1 text-center">Contactanos</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
-            <form class="custom-form" method="post" action="contactoexitoso">
+            <form class="custom-form" method="post" action="contactando">
 				<div class="mb-3">
 					<label for="nombre" class="form-label"><span class="text-danger">*</span>Nombre:</label>
 					<input type="text" class="form-control" placeholder="" id="nombre" name="nombre" required>

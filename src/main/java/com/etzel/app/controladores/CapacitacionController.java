@@ -35,6 +35,18 @@ public class CapacitacionController {
     public CapacitacionController(CapacitacionService cService) {
         this.cService = cService;
     }
+    
+    @RequestMapping(value = "/formcapacitacion", method = RequestMethod.GET)
+    public String 	formCapacitacion(Locale locale, Model model) {
+		logger.info("Mostrando formulario para crear una capacitacion.");
+		
+		fechaSistema(locale, model);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "crearCapacitacion.jsp");
+		
+		return "plantilla";
+	}
 
     @RequestMapping(value = "/listacapacitaciones", method = RequestMethod.GET)
     public String listarCapacitaciones(Locale locale, Model model) {
@@ -51,24 +63,12 @@ public class CapacitacionController {
 
         return "plantilla";
     }
-    
-    @RequestMapping(value = "/formcapacitacion", method = RequestMethod.GET)
-    public String 	formCapacitacion(Locale locale, Model model) {
-		logger.info("Mostrando formulario para crear una capacitacion.");
-		
-		fechaSistema(locale, model);
-		
-		// Establecer la pagina a incluir en la plantilla
-		model.addAttribute("contenido", "crearCapacitacion.jsp");
-		
-		return "plantilla";
-	}
 
     @RequestMapping(value = "/crearcapacitacion", method = RequestMethod.POST)
     public String crearCapacitacion(Capacitacion capacitacion, HttpServletRequest request, 
     		HttpServletResponse response, Locale locale, Model model) {
     	
-    	// Obtener los datos del formulario
+    	// Obtener los datos del formulario de capacitacion
         String nombreCapacitacion = request.getParameter("nombreCapacitacion");
         String horario = request.getParameter("horario");
         String fechaCapacitacion = request.getParameter("fechaCapacitacion");
