@@ -98,16 +98,6 @@ public class CapacitacionDao implements ICapacitacionDao {
 		String query = "select * from capacitacion where id = ?";
 		
 		return template.queryForObject(query, new Object[] {id}, new CapacitacionRowMapper());
-		
-		/*Capacitacion capacitacion = (Capacitacion) template.query(query, new CapacitacionRowMapper());
-		return capacitacion;*/
-		
-		/* List<Capacitacion> capacitaciones = template.query(query, new Object[] { id }, new CapacitacionRowMapper());
-	    if (capacitaciones.isEmpty()) {
-	        return null; // Otra acción apropiada si no se encuentra ninguna capacitación con el ID dado
-	    } else {
-	        return capacitaciones.get(0);
-	    } */
 	}
 
 	@Override
@@ -115,7 +105,7 @@ public class CapacitacionDao implements ICapacitacionDao {
 
 		String query = "update capacitacion set nombre = ?, horario = ?, fecha = ? where id = ?";
 		
-		template.update(query, new Object[] {c.getNombreCapacitacion(), c.getHorario(), c.getFechaCapacitacion()});
+		template.update(query, new Object[] {c.getNombreCapacitacion(), c.getHorario(), c.getFechaCapacitacion(), c.getIdCapacitacion()});
 	}
 
 	@Override

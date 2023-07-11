@@ -48,22 +48,6 @@ public class CapacitacionController {
 		return "plantilla";
 	}
 
-    @RequestMapping(value = "/listacapacitaciones", method = RequestMethod.GET)
-    public String listarCapacitaciones(Locale locale, Model model) {
-        // Obtener la lista de capacitaciones desde el DAO
-        List<Capacitacion> capacitaciones = cService.getAll();
-        
-        fechaSistema(locale, model);
-
-        // Agregar la lista de capacitaciones al model
-        model.addAttribute("listacapacitaciones", capacitaciones);
-
-        // Establecer la pagina a incluir en la plantilla
-        model.addAttribute("contenido", "listarCapacitacion.jsp");
-
-        return "plantilla";
-    }
-
     @RequestMapping(value = "/crearcapacitacion", method = RequestMethod.POST)
     public String crearCapacitacion(Capacitacion capacitacion, HttpServletRequest request, 
     		HttpServletResponse response, Locale locale, Model model) {
@@ -80,13 +64,29 @@ public class CapacitacionController {
         }
         
         if (capacitacionCreada) {
-            // Llamar al metodo crear capacitacion para que muestres la lista de capacitaciones
+            // Llamar al metodo listarCapacitaciones() para mostrar la lista de capacitaciones
         	return listarCapacitaciones(locale, model);
         } else {
         	fechaSistema(locale, model);
     		
     		return formCapacitacion(locale, model);
         }
+    }
+
+    @RequestMapping(value = "/listacapacitaciones", method = RequestMethod.GET)
+    public String listarCapacitaciones(Locale locale, Model model) {
+        // Obtener la lista de capacitaciones desde el DAO
+        List<Capacitacion> capacitaciones = cService.getAll();
+        
+        fechaSistema(locale, model);
+
+        // Agregar la lista de capacitaciones al model
+        model.addAttribute("listacapacitaciones", capacitaciones);
+
+        // Establecer la pagina a incluir en la plantilla
+        model.addAttribute("contenido", "listarCapacitacion.jsp");
+
+        return "plantilla";
     }
     
     public Model fechaSistema(Locale locale, Model model) {
