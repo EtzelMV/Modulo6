@@ -15,7 +15,7 @@
 	<div class="row align-items-center" style="background-color: rgba(0, 0, 0, 0.5); height: 50vh;">
 		<div class="col-4">
 	       <div class="d-flex align-items-center justify-content-center">
-	         <iframe class="img-fluid rounded shadow" src="https://giphy.com/embed/5wp2jHzEvnZ2o" 
+	         <iframe class="img-fluid rounded shadow" src="https://giphy.com/embed/TnSuSTDljmD6LhIyKn" 
 	         	style="position:relative;max-width: 100%;"></iframe>
 	       </div>
 	     </div>
