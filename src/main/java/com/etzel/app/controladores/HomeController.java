@@ -6,6 +6,8 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +30,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		log.info("Bienvenido Etzel!!! El idioma local es {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		fechaSistema(locale, model);
 		
 		// Establecer la pagina a incluir en la plantilla
 		model.addAttribute("contenido", "home.jsp");
@@ -41,20 +38,56 @@ public class HomeController {
 		return "plantilla";
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login")
 	public String login(Locale locale, Model model) {
 		log.info("Mostrando formulario para inicio de sesión");
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		fechaSistema(locale, model);
 		
 		// Establecer la pagina a incluir en la plantilla
 		model.addAttribute("contenido", "login.jsp");
 		
 		return "plantilla";
 	}
+	
+	@RequestMapping(value = "/loginerror")
+	public String loginError(Locale locale, Model model) {
+		log.info("Mostrando que ha ocurrido un error al iniciar sesión.");
+		
+		fechaSistema(locale, model);
+		
+		model.addAttribute("error", "true");
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "login.jsp");
+		
+		return "plantilla";
+	}
+	
+	@RequestMapping(value = "/logout")
+	public String logout(Locale locale, Model model) {
+		log.info("Se ha cerrado la sesión.");
+		
+		fechaSistema(locale, model);
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth != null) {
+			SecurityContextHolder.getContext().setAuthentication(null);
+		}
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "login.jsp");
+		
+		return "plantilla";
+	}
+	
+	public Model fechaSistema(Locale locale, Model model) {
+    	
+    	Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		return model.addAttribute("serverTime", formattedDate );
+    }
 }

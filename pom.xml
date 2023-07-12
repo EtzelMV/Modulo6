@@ -37,6 +37,7 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -48,6 +49,7 @@
             <artifactId>spring-security-web</artifactId>
             <version>4.2.13.RELEASE</version>
         </dependency>
+        <!-- Developer: https://www.facebook.com/iEtzel -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>

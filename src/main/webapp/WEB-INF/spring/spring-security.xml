@@ -7,27 +7,25 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security.xsd">
-
+	
     <security:http auto-config="true">
     	<!-- Configuración de las rutas y permisos -->
         <security:intercept-url pattern="/" access="permitAll" />
         <security:intercept-url pattern="/home" access="permitAll" />
-        <security:intercept-url pattern="/formcapacitacion" access="hasAnyAuthority('ADMIN')" />
-        <security:intercept-url pattern="/crearcapacitacion" access="hasAnyAuthority('ADMIN')" />
-        <security:intercept-url pattern="/listacapacitaciones" access="hasAnyAuthority('ADMIN')" />
-        <security:intercept-url pattern="/formcapacitacion" access="hasAnyAuthority('PRO')" />
-        <security:intercept-url pattern="/crearcapacitacion" access="hasAnyAuthority('PRO')" />
-        <security:intercept-url pattern="/listacapacitaciones" access="hasAnyAuthority('PRO')" />
+        <security:intercept-url pattern="/formcapacitacion" access="hasAnyAuthority('ADMIN', 'PRO')" />
+        <security:intercept-url pattern="/crearcapacitacion" access="hasAnyAuthority('ADMIN', 'PRO')" />
+        <security:intercept-url pattern="/listacapacitaciones" access="hasAnyAuthority('ADMIN', 'PRO')" />
         <security:intercept-url pattern="/formusuario" access="hasAnyAuthority('ADMIN')" />
         <security:intercept-url pattern="/crearusuario" access="hasAnyAuthority('ADMIN')" />
         <security:intercept-url pattern="/listausuarios" access="hasAnyAuthority('ADMIN')" />
         <security:intercept-url pattern="/contacto" access="permitAll" />
         
         <!-- Configuración del formulario de inicio de sesión -->
-        <!-- default-target-url="/home" -->
+        <!-- default-target-url="/home" 
+        	-->
         <security:form-login login-page="/login" 
         	login-processing-url="/login-process"
-            authentication-failure-url="/loginError"
+            authentication-failure-url="/loginerror"
             username-parameter="usuario"
             password-parameter="contrasenna" />
             
@@ -49,5 +47,5 @@
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>
-
+	<!-- Developer: https://www.facebook.com/iEtzel -->
 </beans>

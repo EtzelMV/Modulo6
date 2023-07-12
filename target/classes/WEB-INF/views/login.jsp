@@ -6,6 +6,12 @@
 	<p class="h1 text-center">Iniciar sesión</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
+        <% 
+        String error = (String) request.getAttribute("error");
+        if(error != null && error.equals("true")) {
+        	out.println("<p class='alert alert-danger'>Clave o usuario incorrecto.</p>");
+        }
+        %>
             <form class="custom-form" method="post" action="login-process">
 				<div class="mb-3">
 					<label for="usuario" class="form-label"><span class="text-danger">*</span>Usuario:</label>
