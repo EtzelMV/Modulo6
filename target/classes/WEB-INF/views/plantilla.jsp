@@ -40,6 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contacto">Contacto</a>
                         </li>
+                        <!-- Verificar si el usuario ha iniciado sesión -->
+                        <c:if test="${pageContext.request.userPrincipal != null}">
+						    <li class="nav-item">
+						        <a class="nav-link" href="logout">Cerrar Sesión</a>
+						    </li>
+						</c:if>
                     </ul>
                 </div>
             </div>
