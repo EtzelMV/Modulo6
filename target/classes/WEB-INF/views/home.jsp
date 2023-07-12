@@ -2,11 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
-<div class="container">
+<div class="container mt-3">
 	<p class="h1 text-center">Desarrollo de Aplicaciones JEE</p>
 	<p class="h3 text-center">Con Spring Tool Suite 3</p>
-	<p class="h3">Spring Legacy Project | Spring MVC Project</p>
-	<p class="h5">Spring Tool Suite (https://spring.io/tools) proporciona un excelente entorno para 
+	<p class="h5">Spring Legacy Project | Spring MVC Project</p>
+	<p class="mt-3 mb-3">Spring Tool Suite (https://spring.io/tools) proporciona un excelente entorno para 
 	el desarrollo de aplicaciones que utilicen Spring Framework. Spring Tool Suite se integra sobre 
 	la plataforma Eclipse (http://www.eclipse.org/) y también da soporte al servidor web (en nuestro 
 	caso Tomcat); sin embargo, podemos preparar el entorno desde el IDE Ecplise con las librerias 
@@ -39,15 +39,12 @@
     </div>
     
 	<div class="mt-3">
-		<p class="h5">Generalmente el uso y explotación de bases de datos relacionales en Java se realiza a 
-		través de herramientas de mapeo ORM como Hibernate o Apache OpenJPA que permiten desarrollar la capa 
-		de persistencia de forma muy rápida con una alta abstracción sobre el modelo relacional.</p>
-		<p class="h5">Sin embargo, la utilización de un ORM no es aplicable para todos los diseños de entidad 
-		relación que soportan este tipo de implementación.</p>
-		<p class="h5">Si bien JPA nos permite trabajar con SQL nativo y procedimientos almacenados (e Hibernate 
-		ofrece funcionalidades adicionales), resulta más práctico trabajar directamente con JDBC ya que no 
-		obtenemos ningún beneficio utilizando JPA.</p>
-		<p class="h5">Spring nos ayuda en esta tarea simplificando y estandarizando el uso de JDBC gracias a las 
-		clases que conforman Spring JDBC Template.</p>
+		<p class="mt-3 mb-3">Spring Security ofrece servicios de seguridad integrales para aplicaciones de software
+		empresarial basadas en J2EE. Hay un énfasis particular en apoyar proyectos construidos usando Spring 
+		Framework, que es la solución J2EE líder para el desarrollo de software empresarial.</p>
+		<p class="mt-3 mb-3">Spring Security es un framework que permitirá gestionar todo lo relativo a la seguridad
+		de nuestra aplicación web, desde el protocolo de seguridad, hasta los roles que necesitan los usuarios 
+		para acceder a los diferentes recursos de la aplicación. Toda la información necesaria, se puede obtener 
+		leyendo la documentación oficial de Spring.</p>
 	</div>
 </div>

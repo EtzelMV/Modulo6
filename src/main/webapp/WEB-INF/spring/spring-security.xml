@@ -24,16 +24,18 @@
         <security:intercept-url pattern="/contacto" access="permitAll" />
         
         <!-- Configuración del formulario de inicio de sesión -->
+        <!-- default-target-url="/home" -->
         <security:form-login login-page="/login" 
-                             login-processing-url="/login-process"
-                             default-target-url="/home"
-                             authentication-failure-url="/login?error=true"
-                             username-parameter="usuario"
-                             password-parameter="contrasenna" />
+        	login-processing-url="/login-process"
+            authentication-failure-url="/loginError"
+            username-parameter="usuario"
+            password-parameter="contrasenna" />
+            
+        <security:csrf disabled="true" />
         
         <!-- Configuración del logout -->
-        <security:logout logout-url="/logout" 
-                         logout-success-url="/login?logout=true" />
+        <security:logout logout-url="/logout"
+			logout-success-url="/login" />
     </security:http>
 
     <security:authentication-manager>

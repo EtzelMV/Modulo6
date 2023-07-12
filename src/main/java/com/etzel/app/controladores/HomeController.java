@@ -40,4 +40,21 @@ public class HomeController {
 		
 		return "plantilla";
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		log.info("Mostrando formulario para inicio de sesión");
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "login.jsp");
+		
+		return "plantilla";
+	}
 }
