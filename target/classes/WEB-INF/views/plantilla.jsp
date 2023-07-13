@@ -15,7 +15,7 @@
 	<header class="bg-dark text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="home">Grupal 7</a>
+                <a class="navbar-brand" href="home">Sprint Final</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,10 +40,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contacto">Contacto</a>
                         </li>
-                        <!-- Verificar si el usuario ha iniciado sesión -->
+                        <!-- Verificar si el usuario ha iniciado sesiï¿½n -->
                         <c:if test="${pageContext.request.userPrincipal != null}">
 						    <li class="nav-item">
-						        <a class="nav-link" href="logout">Cerrar Sesión</a>
+						        <a class="nav-link" href="logout">Cerrar Sesiï¿½n</a>
 						    </li>
 						</c:if>
                     </ul>
@@ -71,7 +71,7 @@
                             <a class="nav-link text-white" href="#">Fernando Bermudez</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Matías Muñoz</a>
+                            <a class="nav-link text-white" href="#">Matï¿½as Muï¿½oz</a>
                         </li>
                     </ul>
                     <ul class="nav">
@@ -83,15 +83,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" 
-                            href="https://drive.google.com/file/d/1aZ8CCM9gINbXwVh5fo_0fjOY843_Kxsi/view?usp=sharing" 
-                            target="_blank">Criterio de evaluación</a>
+                            href="https://drive.google.com/file/d/1-8L_xg-VBvRUFDluLJhbyEdEVMehKfxy/view?usp=sharing" 
+                            target="_blank">Criterio de evaluaciï¿½n</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-5">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="https://my.bible.com/es" target="_blank">'El temor de Jehová es aborrecer el mal; 
+                            <a class="nav-link text-white" href="https://my.bible.com/es" target="_blank">'El temor de Jehovï¿½ es aborrecer el mal; 
                             	La soberbia y la arrogancia, el mal camino, Y la boca perversa, aborrezco.' Proverbios 8:13</a>
                         </li>
                     </ul>

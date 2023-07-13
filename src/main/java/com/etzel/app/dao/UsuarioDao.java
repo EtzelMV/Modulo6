@@ -33,14 +33,14 @@ public class UsuarioDao implements IUsuarioDao {
     public boolean create(Usuario user) {
     	
     	try {
-    		// Declarando el query para insertar los datos de la capacitacion
-            String query = "INSERT INTO usuario (run, nombre, apellido, fechaNacimiento) VALUES (?, ?, ?, ?)";
+    		// Declarando el query para insertar los datos del usuario
+            String query = "insert into usuario (run, nombre, apellido, fechaNacimiento) VALUES (?, ?, ?, ?)";
             template.update(query, user.getRun(), user.getNombre(), user.getApellido(), user.getFechaNacimiento());
             
-            // Log para mostrar la capacitacion creada en archivo de registro
+            // Log para mostrar el usuario creado en el  registro
             logger.info("Usuario creado (Logger.info): {}", user);
             
-            // Mostrando la capacitacion creada por consola
+            // Mostrando el usuario creado por consola
             System.out.println("Usuario creado (println y toString): " + user.toString());
 
             return true;
@@ -85,8 +85,8 @@ public class UsuarioDao implements IUsuarioDao {
             Usuario usuario4 = new Usuario();
             usuario4.setId(1);
             usuario4.setRun("18212019-4");
-            usuario4.setNombre("Matías");
-            usuario4.setApellido("Muñoz");
+            usuario4.setNombre("Matï¿½as");
+            usuario4.setApellido("Muï¿½oz");
             usuario4.setFechaNacimiento("19/04/1995");
             
          // Agregar las usuarios por defecto a la lista
@@ -112,6 +112,12 @@ public class UsuarioDao implements IUsuarioDao {
 
 	@Override
 	public void update(Usuario user) {
+<<<<<<< HEAD
+=======
+		
+		// Log para mostrar el usuario creado en el registro
+        logger.info("Usuario creado (Logger.info): {}", user);
+>>>>>>> a519e87423b9473443212ce7794ac5e52c9db84d
 
 		String query = "update usuario set run = ?, nombre = ?, apellido = ?, fechaNacimiento = ? where id = ?";
 		
@@ -121,7 +127,11 @@ public class UsuarioDao implements IUsuarioDao {
 	@Override
 	public void delete(int id) {
 
+<<<<<<< HEAD
 		String query = "delete usuario where id = ?";
+=======
+		String query = "delete from usuario where id = ?";
+>>>>>>> a519e87423b9473443212ce7794ac5e52c9db84d
 		
 		template.update(query, new Object[] {id});
 	}

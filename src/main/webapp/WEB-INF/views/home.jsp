@@ -8,7 +8,7 @@
 	<p class="h5">Spring Legacy Project | Spring MVC Project</p>
 	<p class="mt-3 mb-3">Spring Tool Suite (https://spring.io/tools) proporciona un excelente entorno para 
 	el desarrollo de aplicaciones que utilicen Spring Framework. Spring Tool Suite se integra sobre 
-	la plataforma Eclipse (http://www.eclipse.org/) y también da soporte al servidor web (en nuestro 
+	la plataforma Eclipse (http://www.eclipse.org/) y tambiï¿½n da soporte al servidor web (en nuestro 
 	caso Tomcat); sin embargo, podemos preparar el entorno desde el IDE Ecplise con las librerias 
 	necesarias.</p>
 		
@@ -32,19 +32,17 @@
 	       </div>
 	     </div>
 	     <div>
-	     	<p class="h5 text-center">El principio de la sabiduría es el temor de Jehová;
-			Los insensatos desprecian la sabiduría y la enseñanza.</p>
+	     	<p class="h5 text-center">El principio de la sabidurï¿½a es el temor de Jehovï¿½;
+			Los insensatos desprecian la sabidurï¿½a y la enseï¿½anza.</p>
 		 	<p class="h5 text-center">Proverbios 1:7 RVR1960</p>
 	     </div>
     </div>
     
 	<div class="mt-3">
-		<p class="mt-3 mb-3">Spring Security ofrece servicios de seguridad integrales para aplicaciones de software
-		empresarial basadas en J2EE. Hay un énfasis particular en apoyar proyectos construidos usando Spring 
-		Framework, que es la solución J2EE líder para el desarrollo de software empresarial.</p>
-		<p class="mt-3 mb-3">Spring Security es un framework que permitirá gestionar todo lo relativo a la seguridad
-		de nuestra aplicación web, desde el protocolo de seguridad, hasta los roles que necesitan los usuarios 
-		para acceder a los diferentes recursos de la aplicación. Toda la información necesaria, se puede obtener 
-		leyendo la documentación oficial de Spring.</p>
+		<div class="text-center fw-bold">
+			<p class="mt-3 mb-3">El participante al finalizar el proyecto serï¿½ capaz de:</p>
+		</div>
+		<p class="mt-3 mb-3">Desarrollar un sitio web dinï¿½mico bajo el patrï¿½n de diseï¿½o MVC 
+		usando el framework de desarrollo Spring, conectï¿½ndose a una base de datos Oracle.</p>
 	</div>
 </div>
