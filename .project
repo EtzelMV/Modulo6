@@ -48,11 +48,7 @@
 		<link>
 			<name>webapp</name>
 			<type>2</type>
-<<<<<<< HEAD
 			<location>C:/Users/ietze/Workspaces/STS3/BootcampJava2023/Modulo6/src/main/webapp</location>
-=======
-			<location>C:/Users/ietze/Workspaces/STS3/BootcampJava2023/M6Sprint/src/main/webapp</location>
->>>>>>> a519e87423b9473443212ce7794ac5e52c9db84d
 		</link>
 	</linkedResources>
 </projectDescription>

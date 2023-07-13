@@ -39,10 +39,12 @@
     </div>
     
 	<div class="mt-3">
-		<div class="text-center fw-bold">
-			<p class="mt-3 mb-3">El participante al finalizar el proyecto será capaz de:</p>
-		</div>
-		<p class="mt-3 mb-3">Desarrollar un sitio web dinámico bajo el patrón de diseño MVC 
-		usando el framework de desarrollo Spring, conectándose a una base de datos Oracle.</p>
+		<p class="mt-3 mb-3">A nivel de autenticación, Spring Security admite una amplia gama de modelos de
+		autenticación. La mayoría de estos modelos de autenticación son proporcionados por terceros o desarrollados 
+		por organismos de estándares relevantes como el Grupo de trabajo de ingeniería de Internet.</p>
+		<p class="mt-3 mb-3">Muchos proveedores de software independientes (ISV) adoptan Spring Security debido a
+		esta importante elección de modelos de autenticación flexibles. Hacerlo les permite integrar rápidamente 
+		sus soluciones con lo que necesiten sus clientes finales, sin realizar muchas tareas de ingeniería o requerir 
+		que el cliente cambie su entorno.</p>
 	</div>
 </div>

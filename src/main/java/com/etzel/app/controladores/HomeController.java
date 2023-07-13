@@ -81,6 +81,18 @@ public class HomeController {
 		return "plantilla";
 	}
 	
+	@RequestMapping(value = "/accessdenied")
+	public String accesoDenegado(Locale locale, Model model) {
+		log.info("Se ha denegado el acceso a un usuario.");
+		
+		fechaSistema(locale, model);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "accesoDenegado.jsp");
+		
+		return "plantilla";
+	}
+	
 	public Model fechaSistema(Locale locale, Model model) {
     	
     	Date date = new Date();

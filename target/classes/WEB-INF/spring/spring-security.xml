@@ -21,13 +21,14 @@
         <security:intercept-url pattern="/contacto" access="permitAll" />
         
         <!-- Configuración del formulario de inicio de sesión -->
-        <!-- default-target-url="/home" 
-        	-->
         <security:form-login login-page="/login" 
         	login-processing-url="/login-process"
             authentication-failure-url="/loginerror"
             username-parameter="usuario"
             password-parameter="contrasenna" />
+            
+        <!-- Configuración del manejo de acceso denegado -->
+        <security:access-denied-handler error-page="/accessdenied" />
             
         <security:csrf disabled="true" />
         
