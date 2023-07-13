@@ -49,18 +49,13 @@ public class UsuarioController {
 	}
     
     @RequestMapping(value = "/crearusuario", method = RequestMethod.POST)
-    public String crearUsuario(Usuario usuario, HttpServletRequest request, 
-    		HttpServletResponse response, Locale locale, Model model) {
-    	
-    	// Obtener los datos del formulario de usuario
-        String run = request.getParameter("run");
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String fechaNacimiento = request.getParameter("fechaNacimiento");
+    public String crearUsuario(Usuario usuario, Locale locale, Model model) {
         
-        if (run != null && !run.isEmpty() && nombre != null && !nombre.isEmpty() && apellido != null && 
-        		!apellido.isEmpty() && fechaNacimiento != null && !fechaNacimiento.isEmpty()) {
-        	// Crear la usuario a traves del DAO
+        if (usuario.getRun() != null && !usuario.getRun().isEmpty() && usuario.getNombre() != null && 
+        !usuario.getNombre().isEmpty() && usuario.getApellido() != null && !usuario.getApellido().isEmpty() && 
+        usuario.getFechaNacimiento() != null && !usuario.getFechaNacimiento().isEmpty()) {
+        	
+        	// Crear el usuario a traves del DAO
             usuarioCreado = userService.create(usuario);
         }
         
@@ -88,6 +83,40 @@ public class UsuarioController {
         model.addAttribute("contenido", "listarUsuario.jsp");
 
         return "plantilla";
+    }
+    
+    @RequestMapping(value = "/formeditarusuario", method = RequestMethod.GET)
+    public String 	formEditarUsuario(int id, Locale locale, Model model) {
+		logger.info("Mostrando formulario para crear un usuario.");
+		
+		// Tomando data del usuario desde la base de datos
+		Usuario usuario = userService.getOne(id);
+		
+		fechaSistema(locale, model);
+		
+		// Enviando data del usuario a la vista
+		model.addAttribute("usuario", usuario);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "editarUsuario.jsp");
+		
+		return "plantilla";
+	}
+    
+    @RequestMapping(value = "/editarusuario", method = RequestMethod.POST)
+    public String editarUsuario(Usuario usuario, Locale locale, Model model) {
+        
+        if (usuario.getRun() != null && !usuario.getRun().isEmpty() && usuario.getNombre() != null && 
+        !usuario.getNombre().isEmpty() && usuario.getApellido() != null && !usuario.getApellido().isEmpty() && 
+        usuario.getFechaNacimiento() != null && !usuario.getFechaNacimiento().isEmpty()) {
+        	
+        	// Editar el usuario a traves del DAO
+            userService.update(usuario);
+        }
+        
+        // Llamar al metodo listarUsuarios() para mostrar la lista de usuarios
+    	return listarUsuarios(locale, model);
+        
     }
     
     public Model fechaSistema(Locale locale, Model model) {

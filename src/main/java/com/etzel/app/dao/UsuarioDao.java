@@ -34,7 +34,7 @@ public class UsuarioDao implements IUsuarioDao {
     	
     	try {
     		// Declarando el query para insertar los datos de la capacitacion
-            String query = "INSERT INTO usuario (run, nombre, apellido, fechaNacimiento) VALUES (?, ?, ?, ?)";
+            String query = "insert into usuario (run, nombre, apellido, fechaNacimiento) VALUES (?, ?, ?, ?)";
             template.update(query, user.getRun(), user.getNombre(), user.getApellido(), user.getFechaNacimiento());
             
             // Log para mostrar la capacitacion creada en archivo de registro

@@ -22,7 +22,6 @@
                         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/webapp"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
                         		
         
         

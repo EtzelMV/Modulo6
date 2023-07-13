@@ -5,11 +5,11 @@
 <%@ page import="com.etzel.app.modelos.Usuario"%>
 
 <div class="container text-center">
-    <h1>Lista de Capacitaciones</h1>
+    <h1>Lista de Usuarios</h1>
     <table class="table table-dark table-bordered">
         <tbody>
             <% int count = 0; %>
-            <% for (Usuario capacitacion : (List<Usuario>) request.getAttribute("listausuarios")) { %>
+            <% for (Usuario usuario : (List<Usuario>) request.getAttribute("listausuarios")) { %>
             <% if (count % 10 == 0) { %>
             <% if (count != 0) { %>
             <% } %>
@@ -19,18 +19,20 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Fecha de nacimiento</th>
-					<% //<th></th> %>
+					<th></th>
+					<th></th>
                 </tr>
             </thead>
         </tbody>
         <tbody>
         <% } %>
         <tr>
-			<td><%= capacitacion.getRun() %></td>
-			<td><%= capacitacion.getNombre() %></td>
-			<td><%= capacitacion.getApellido() %></td>
-			<td><%= capacitacion.getFechaNacimiento() %></td>
-			<% //<td><a href="#" class="btn btn-success">Editar</a></td> %>
+			<td><%= usuario.getRun() %></td>
+			<td><%= usuario.getNombre() %></td>
+			<td><%= usuario.getApellido() %></td>
+			<td><%= usuario.getFechaNacimiento() %></td>
+			<td><a href="formeditarusuario?id=<%= usuario.getId() %>" class="btn btn-info">Editar</a></td>
+			<td><a href="eliminarusuario?id=<%= usuario.getId() %>" class="btn btn-info">Eliminar</a></td>
         </tr>
         <% count++; %>
         <% } %>
