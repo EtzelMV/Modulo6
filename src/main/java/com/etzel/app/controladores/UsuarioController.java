@@ -119,6 +119,20 @@ public class UsuarioController {
         
     }
     
+    @RequestMapping(value = "/eliminarusuario", method = RequestMethod.GET)
+    public String 	eliminarUsuario(int id, Locale locale, Model model) {
+		
+		// Eliminando usuario
+		userService.delete(id);
+		
+		fechaSistema(locale, model);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "usuarioEliminado.jsp");
+		
+		return "plantilla";
+	}
+    
     public Model fechaSistema(Locale locale, Model model) {
     	
     	Date date = new Date();
