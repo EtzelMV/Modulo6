@@ -26,16 +26,16 @@
                             <a class="nav-link" href="home">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="formcapacitacion">Crear Capacitacion</a>
+                            <a class="nav-link" href="listacapacitaciones">Capacitaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="listacapacitaciones">Listar Capacitaciones</a>
+                            <a class="nav-link" href="listaclientes">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="formusuario">Crear Usuario</a>
+                            <a class="nav-link" href="listaprofesionales">Profesionales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="listausuarios">Listar Usuarios</a>
+                            <a class="nav-link" href="listaadministrativos">Administrativos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacto">Contacto</a>

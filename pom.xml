@@ -12,7 +12,7 @@
         <servlet-api.version>2.5</servlet-api.version>
         <jstl.version>1.2</jstl.version>
         <mysql-connector.version>8.0.27</mysql-connector.version>
-        <java.version>1.6</java.version>
+        <java.version>1.7</java.version>
         <maven-compiler.version>3.8.1</maven-compiler.version>
         <maven-war.version>3.3.2</maven-war.version>
         <spring-jdbc.version>4.3.30.RELEASE</spring-jdbc.version>
@@ -49,7 +49,6 @@
             <artifactId>spring-security-web</artifactId>
             <version>4.2.13.RELEASE</version>
         </dependency>
-        <!-- Developer: https://www.facebook.com/iEtzel -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
