@@ -171,7 +171,7 @@ public class Cliente extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Cliente [AFP = " + afp + ", Direccion = " + direccion + ", Comuna = " + comuna + ", Telefono = " + telefono
+		return "Cliente [" + super.toString() + "AFP = " + afp + ", Direccion = " + direccion + ", Comuna = " + comuna + ", Telefono = " + telefono
 				+ ", Sistema de salud = " + (sistemaSalud == 1 ? "Fonasa" : "Isapre") + "]";
 	}
 }
