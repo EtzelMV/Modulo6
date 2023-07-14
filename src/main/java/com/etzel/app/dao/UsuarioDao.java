@@ -23,7 +23,7 @@ public class UsuarioDao implements IUsuarioDao {
 	@Autowired
 	JdbcTemplate template;
 	
-	private static final Logger logger = LoggerFactory.getLogger(CapacitacionDao.class);
+	private static final Logger logger = LoggerFactory.getLogger(UsuarioDao.class);
 	
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
@@ -47,53 +47,30 @@ public class UsuarioDao implements IUsuarioDao {
         } catch (Exception e) {
         	
         	// Registrando el error
-            logger.error("Error al crear la capacitacion: {}", e.getMessage());
+            logger.error("Error al crear el usuario: {}", e.getMessage());
             return false;
         }
     }
 
 	@Override
 	public List<Usuario> readAll() {
-		String query = "select * from usuario";
+		String query = "select id, run, nombre, apellido, fechaNacimiento "
+				+ "from usuario";
     	
     	List<Usuario> usuarios = template.query(query, new UsuarioRowMapper());
     	
     	if (usuarios.isEmpty()) {
     		
-    		// Crear las usuarios por defecto
+    		// Crear usuario por defecto
             Usuario usuario1 = new Usuario();
             usuario1.setId(1);
             usuario1.setRun("18212019-1");
-            usuario1.setNombre("Etzel");
+            usuario1.setNombre("Etzel Alexander");
             usuario1.setApellido("M. Valderrama");
             usuario1.setFechaNacimiento("22/04/1986");
-
-            Usuario usuario2 = new Usuario();
-            usuario2.setId(1);
-            usuario2.setRun("18212019-2");
-            usuario2.setNombre("Fernando");
-            usuario2.setApellido("Bermudez");
-            usuario2.setFechaNacimiento("07/06/1986");
-
-            Usuario usuario3 = new Usuario();
-            usuario3.setId(1);
-            usuario3.setRun("18212019-3");
-            usuario3.setNombre("Ricardo");
-            usuario3.setApellido("Silva");
-            usuario3.setFechaNacimiento("13/07/1999");
             
-            Usuario usuario4 = new Usuario();
-            usuario4.setId(1);
-            usuario4.setRun("18212019-4");
-            usuario4.setNombre("Matías");
-            usuario4.setApellido("Muñoz");
-            usuario4.setFechaNacimiento("19/04/1995");
-            
-         // Agregar las usuarios por defecto a la lista
+         // Agregar usuario por defecto a la lista
             usuarios.add(usuario1);
-            usuarios.add(usuario2);
-            usuarios.add(usuario3);
-            usuarios.add(usuario4);
     	}
 
         // Log para mostrar la lista de usuarios
@@ -105,7 +82,8 @@ public class UsuarioDao implements IUsuarioDao {
 	@Override
 	public Usuario readOne(int id) {
 		
-		String query = "select * from usuario where id = ?";
+		String query = "select id, run, nombre, apellido, fechaNacimiento from "
+				+ "usuario where id = ?";
 		
 		return template.queryForObject(query, new Object[] {id}, new UsuarioRowMapper());
 	}
@@ -116,9 +94,11 @@ public class UsuarioDao implements IUsuarioDao {
 		// Log para mostrar el usuario creado en el registro
         logger.info("Usuario creado (Logger.info): {}", user);
 
-		String query = "update usuario set run = ?, nombre = ?, apellido = ?, fechaNacimiento = ? where id = ?";
+		String query = "update usuario set nombre = ?, apellido = ?, "
+				+ "fechaNacimiento = ? where id = ?";
 		
-		template.update(query, new Object[] {user.getRun(), user.getNombre(), user.getApellido(), user.getFechaNacimiento(), user.getId()});
+		template.update(query, new Object[] {user.getNombre(), user.getApellido(), 
+				user.getFechaNacimiento(), user.getId()});
 	}
 
 	@Override
