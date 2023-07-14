@@ -4,6 +4,6 @@
 
 <div class="container mt-3 text-center">
 	<div class="col-md-7 mx-auto">
-		<p class="h1 mt-5">El usuario ha sido eliminado exitosamente</p>
+		<p class="h1 mt-5">El cliente ha sido borrado de la base de datos.</p>
 	</div>
 </div>

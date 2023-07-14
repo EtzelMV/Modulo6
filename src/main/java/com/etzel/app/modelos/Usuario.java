@@ -37,6 +37,20 @@ public class Usuario {
 		this.apellido = apellido;
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	
+	/**
+	 * @param run
+	 * @param nombre
+	 * @param apellido
+	 * @param fechaNacimiento
+	 */
+	public Usuario(String run, String nombre, String apellido, String fechaNacimiento) {
+		super();
+		this.run = run;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.fechaNacimiento = fechaNacimiento;
+	}
 
 	/**
      * Metodos de acceso
@@ -116,7 +130,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", run=" + run + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", fechaNacimiento=" + fechaNacimiento + "]";
+		return "Usuario [RUN = " + run + ", Nombre = " + nombre + ", Apellido = " + apellido
+				+ ", Fecha de Nacimiento=" + fechaNacimiento + "]";
 	}
 }
