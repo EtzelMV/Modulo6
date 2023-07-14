@@ -20,7 +20,7 @@
 					<th>Apellido</th>
 					<th>Fecha de nacimiento</th>
 					<th></th>
-					<th></th>
+					<td><a href="formusuario" class="btn btn-info">Registrar</a></td>
                 </tr>
             </thead>
         </tbody>
@@ -31,8 +31,8 @@
 			<td><%= usuario.getNombre() %></td>
 			<td><%= usuario.getApellido() %></td>
 			<td><%= usuario.getFechaNacimiento() %></td>
-			<td><a href="formeditarusuario?id=<%= usuario.getId() %>" class="btn btn-info">Editar</a></td>
-			<td><a href="eliminarusuario?id=<%= usuario.getId() %>" class="btn btn-info">Eliminar</a></td>
+			<td><a href="formeditarusuario?id=<%= usuario.getId() %>" class="btn btn-warning">Editar</a></td>
+			<td><a href="eliminarusuario?id=<%= usuario.getId() %>" class="btn btn-danger">Eliminar</a></td>
         </tr>
         <% count++; %>
         <% } %>
