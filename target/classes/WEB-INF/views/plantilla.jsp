@@ -29,6 +29,9 @@
                             <a class="nav-link" href="listacapacitaciones">Capacitaciones</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="listausuarios">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="listaclientes">Clientes</a>
                         </li>
                         <li class="nav-item">
