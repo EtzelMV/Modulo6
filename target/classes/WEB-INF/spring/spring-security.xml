@@ -10,7 +10,7 @@
 	
     <security:http auto-config="true">
     	<!-- Configuración de las rutas y permisos -->
-        <security:intercept-url pattern="/" access="permitAll" />
+    	<!-- <security:intercept-url pattern="/" access="permitAll" />
         <security:intercept-url pattern="/home" access="permitAll" />
         <security:intercept-url pattern="/formcapacitacion" access="hasAnyAuthority('ADMIN', 'PRO')" />
         <security:intercept-url pattern="/crearcapacitacion" access="hasAnyAuthority('ADMIN', 'PRO')" />
@@ -18,7 +18,8 @@
         <security:intercept-url pattern="/formusuario" access="hasAnyAuthority('ADMIN')" />
         <security:intercept-url pattern="/crearusuario" access="hasAnyAuthority('ADMIN')" />
         <security:intercept-url pattern="/listausuarios" access="hasAnyAuthority('ADMIN')" />
-        <security:intercept-url pattern="/contacto" access="permitAll" />
+        <security:intercept-url pattern="/contacto" access="permitAll" /> -->
+        
         
         <!-- Configuración del formulario de inicio de sesión -->
         <security:form-login login-page="/login" 
