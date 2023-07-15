@@ -95,8 +95,8 @@ public class UsuarioDao implements IUsuarioDao {
 	@Override
 	public Usuario readOne(int id) {
 		
-		String query = "select id, run, nombre, apellido, fechaNacimiento from "
-				+ "usuario where id = ?";
+		String query = "select id, run, nombre, apellido, fechaNacimiento, afp, titulo, "
+				+ "area from usuario where id = ?";
 		
 		return template.queryForObject(query, new Object[] {id}, new UsuarioRowMapper());
 	}

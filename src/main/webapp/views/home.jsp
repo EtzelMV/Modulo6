@@ -39,12 +39,14 @@
     </div>
     
 	<div class="mt-3">
-		<p class="mt-3 mb-3">A nivel de autenticación, Spring Security admite una amplia gama de modelos de
-		autenticación. La mayoría de estos modelos de autenticación son proporcionados por terceros o desarrollados 
-		por organismos de estándares relevantes como el Grupo de trabajo de ingeniería de Internet.</p>
-		<p class="mt-3 mb-3">Muchos proveedores de software independientes (ISV) adoptan Spring Security debido a
-		esta importante elección de modelos de autenticación flexibles. Hacerlo les permite integrar rápidamente 
-		sus soluciones con lo que necesiten sus clientes finales, sin realizar muchas tareas de ingeniería o requerir 
-		que el cliente cambie su entorno.</p>
+		<p class="mt-3 mb-3">La transferencia de estado representacional (en inglés representational state transfer) 
+		o REST es un estilo de arquitectura software para sistemas hipermedia distribuidos como la World Wide Web. El 
+		término se originó en el año 2000, en una tesis doctoral sobre la web escrita por Roy Fielding, uno de los 
+		principales autores de la especificación del protocolo HTTP y ha pasado a ser ampliamente utilizado por la 
+		comunidad de desarrollo.</p>
+		<p class="mt-3 mb-3">JSON (acrónimo de JavaScript Object Notation, «notación de objeto de JavaScript») es un
+		formato de texto sencillo para el intercambio de datos. Se trata de un subconjunto de la notación literal de 
+		objetos de JavaScript, aunque, debido a su amplia adopción como alternativa a XML, se considera (año 2019) un 
+		formato independiente del lenguaje.</p>
 	</div>
 </div>
