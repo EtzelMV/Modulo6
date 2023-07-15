@@ -105,21 +105,25 @@ public class CapacitacionDao implements ICapacitacionDao {
 
 		String query = "update capacitacion set nombre = ?, horario = ?, fecha = ? where id = ?";
 		
-		template.update(query, new Object[] {c.getNombreCapacitacion(), c.getHorario(), c.getFechaCapacitacion(), c.getIdCapacitacion()});
+		template.update(query, new Object[] {c.getNombreCapacitacion(), c.getHorario(), 
+				c.getFechaCapacitacion(), c.getIdCapacitacion()});
+		
+		// Log para mostrar la capacitacion actualizada en el registro
+        logger.info("Capacitacion actualizada (Logger.info): {}", c);
 	}
 
 	@Override
 	public void delete(int id) {
 
-		String query = "delete capacitacion where id = ?";
+		String query = "delete from capacitacion where id = ?";
 		
 		template.update(query, new Object[] {id});
 	}
 	
 	class CapacitacionRowMapper implements RowMapper<Capacitacion> {
 		public Capacitacion mapRow(ResultSet rs, int rowNum) throws SQLException {
-			return new Capacitacion(rs.getInt("id"), rs.getString("nombre"), rs.getString("horario"), 
-					rs.getString("fecha"));
+			return new Capacitacion(rs.getInt("id"), rs.getString("nombre"), 
+					rs.getString("horario"), rs.getString("fecha"));
 		}
 	}
 }

@@ -49,16 +49,12 @@ public class CapacitacionController {
 	}
 
     @RequestMapping(value = "/crearcapacitacion", method = RequestMethod.POST)
-    public String crearCapacitacion(Capacitacion capacitacion, HttpServletRequest request, 
-    		HttpServletResponse response, Locale locale, Model model) {
-    	
-    	// Obtener los datos del formulario de capacitacion
-        String nombreCapacitacion = request.getParameter("nombreCapacitacion");
-        String horario = request.getParameter("horario");
-        String fechaCapacitacion = request.getParameter("fechaCapacitacion");
+    public String crearCapacitacion(Capacitacion capacitacion, Locale locale, Model model) {
         
-        if (nombreCapacitacion != null && !nombreCapacitacion.isEmpty() && horario != null && !horario.isEmpty() && 
-        		fechaCapacitacion != null && !fechaCapacitacion.isEmpty()) {
+        if (capacitacion.getNombreCapacitacion() != null && !capacitacion.getNombreCapacitacion().isEmpty() 
+        		&& capacitacion.getHorario() != null && !capacitacion.getHorario().isEmpty() && 
+        		capacitacion.getFechaCapacitacion() != null && !capacitacion.getFechaCapacitacion().isEmpty()) {
+        	
         	// Crear la capacitacion a traves del DAO
             capacitacionCreada = cService.create(capacitacion);
         }
@@ -88,6 +84,59 @@ public class CapacitacionController {
 
         return "plantilla";
     }
+    
+    @RequestMapping(value = "/formeditarcapacitacion", method = RequestMethod.GET)
+    public String 	formEditarCapacitacion(int id, Locale locale, Model model) {
+		logger.info("Mostrando formulario para editar una capacitacion.");
+		
+		// Tomando data de la capacitacion desde la base de datos
+		Capacitacion capacitacion = cService.getOne(id);
+		
+		fechaSistema(locale, model);
+		
+		// Enviando data de la capacitacion a la vista
+		model.addAttribute("capacitacion", capacitacion);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "editarCapacitacion.jsp");
+		
+		return "plantilla";
+	}
+    
+    @RequestMapping(value = "/editarcapacitacion", method = RequestMethod.POST)
+    public String editarCapacitacion(Capacitacion capacitacion, Locale locale, Model model) {
+        
+        if (capacitacion.getNombreCapacitacion() != null && !capacitacion.getNombreCapacitacion().isEmpty() 
+        		&& capacitacion.getHorario() != null && !capacitacion.getHorario().isEmpty() && 
+        		capacitacion.getFechaCapacitacion() != null && !capacitacion.getFechaCapacitacion().isEmpty()) {
+        	
+        	// Editar la capacitacion a traves del DAO
+            cService.update(capacitacion);
+        }
+        
+        // Llamar al metodo listarCapacitaciones() para mostrar la lista de capacitaciones
+    	return listarCapacitaciones(locale, model);
+    }
+    
+    @RequestMapping(value = "/borrarcapacitacion", method = RequestMethod.GET)
+    public String 	borrarCapacitacion(int id, Locale locale, Model model) {
+    	// Tomando data del capacitacion desde la base de datos
+    	Capacitacion capacitacion = cService.getOne(id);
+		
+		// Eliminando capacitacion
+		cService.delete(id);
+		
+		logger.info("La capacitacion (" + capacitacion.getNombreCapacitacion() + ", " + 
+    			capacitacion.getHorario() + ", " + capacitacion.getFechaCapacitacion() + 
+    			") ha sido borrado.");
+		
+		fechaSistema(locale, model);
+		
+		// Establecer la pagina a incluir en la plantilla
+		model.addAttribute("contenido", "capacitacionBorrado.jsp");
+		
+		return "plantilla";
+	}
     
     public Model fechaSistema(Locale locale, Model model) {
     	

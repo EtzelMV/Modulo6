@@ -18,7 +18,8 @@
 					<th>Capacitación</th>
 					<th>Horario</th>
 					<th>Fecha de la capacitación</th>
-					<% //<th></th> %>
+					<th></th>
+					<td><a href="formcapacitacion" class="btn btn-info">Registrar</a></td>
                 </tr>
             </thead>
         </tbody>
@@ -28,7 +29,8 @@
 			<td><%= capacitacion.getNombreCapacitacion() %></td>
 			<td><%= capacitacion.getHorario() %></td>
 			<td><%= capacitacion.getFechaCapacitacion() %></td>
-			<% //<td><a href="#" class="btn btn-success">Editar</a></td> %>
+			<td><a href="formeditarcapacitacion?id=<%= capacitacion.getIdCapacitacion() %>" class="btn btn-warning">Editar</a></td>
+			<td><a href="borrarcapacitacion?id=<%= capacitacion.getIdCapacitacion() %>" class="btn btn-danger">Borrar</a></td>
         </tr>
         <% count++; %>
         <% } %>
