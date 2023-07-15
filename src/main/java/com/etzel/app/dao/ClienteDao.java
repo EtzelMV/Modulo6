@@ -2,6 +2,7 @@ package com.etzel.app.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -63,23 +64,35 @@ public class ClienteDao implements IClienteDao {
     	
     	List<Cliente> clientes = template.query(query, new ClienteRowMapper());
     	
+    	/* 
+    	 * Solución con java 8 en adelante:
+    	 * clientes.removeIf(registro -> registro == null); 
+    	 */
+    	Iterator<Cliente> iterator = clientes.iterator();
+        while (iterator.hasNext()) {
+            Cliente registro = iterator.next();
+            if (registro == null) {
+                iterator.remove();
+            }
+        }
+    	
     	if (clientes.isEmpty()) {
     		
     		// Crear el cliente por defecto
-            Cliente cliente1 = new Cliente();
-            cliente1.setId(1);
-            cliente1.setRun("18212019-1");
-            cliente1.setNombre("Etzel Alexander");
-            cliente1.setApellido("M. Valderrama");
-            cliente1.setFechaNacimiento("22/04/1986");
-            cliente1.setAfp("Mi AFP");
-            cliente1.setDireccion("Las Lilas 1019");
-            cliente1.setComuna("Lo Prado");
-            cliente1.setTelefono("958235046");
-            cliente1.setSistemaSalud(1);
+            Cliente clienteDefault = new Cliente();
+            clienteDefault.setId(1);
+            clienteDefault.setRun("18212019-1");
+            clienteDefault.setNombre("Etzel Alexander");
+            clienteDefault.setApellido("M. Valderrama");
+            clienteDefault.setFechaNacimiento("22/04/1986");
+            clienteDefault.setAfp("Mi AFP");
+            clienteDefault.setDireccion("Las Lilas 1019");
+            clienteDefault.setComuna("Lo Prado");
+            clienteDefault.setTelefono("958235046");
+            clienteDefault.setSistemaSalud(1);
             
          // Agregar el cliente por defecto a la lista
-            clientes.add(cliente1);
+            clientes.add(clienteDefault);
     	}
 
         // Log para mostrar la lista de clientes
@@ -100,10 +113,7 @@ public class ClienteDao implements IClienteDao {
 	@Override
 	public void update(Cliente cliente) {
 
-		// Log para mostrar el cliente creado en el registro
-        logger.info("Cliente creado (Logger.info): {}", cliente);
-
-		String query = "update usuario set nombre = ?, apellido = ?, fechaNacimiento = ?,  "
+		String query = "update usuario set nombre = ?, apellido = ?, fechaNacimiento = ?, "
 				+ "afp = ?, direccion = ?, comuna = ?, telefono = ?, sistemaSalud = ? "
 				+ "where id = ?";
 		
@@ -111,6 +121,9 @@ public class ClienteDao implements IClienteDao {
 				cliente.getFechaNacimiento(), cliente.getAfp(), cliente.getDireccion(), 
 				cliente.getComuna(), cliente.getTelefono(), cliente.getSistemaSalud(), 
 				cliente.getId()});
+		
+		// Log para mostrar el cliente creado en el registro
+        logger.info("Cliente actualizado (Logger.info): {}", cliente);
 	}
 
 	@Override
@@ -123,8 +136,15 @@ public class ClienteDao implements IClienteDao {
 
 	class ClienteRowMapper implements RowMapper<Cliente> {
 	    public Cliente mapRow(ResultSet rs, int rowNum) throws SQLException {
-	        return new Cliente(rs.getInt("id"), rs.getString("run"), rs.getString("nombre"), 
-	                rs.getString("apellido"), rs.getString("fechaNacimiento"));
+	        String afp = rs.getString("afp");
+	        if (afp != null) {
+	            return new Cliente(rs.getInt("id"), rs.getString("run"), rs.getString("nombre"), 
+	                    rs.getString("apellido"), rs.getString("fechaNacimiento"), afp, 
+	                    rs.getString("direccion"), rs.getString("comuna"), rs.getString("telefono"), 
+	                    rs.getInt("sistemaSalud"));
+	        } else {
+	            return null; // Si afp es nulo, no se devuelve ningún objeto Cliente
+	        }
 	    }
 	}
 }

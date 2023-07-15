@@ -13,7 +13,7 @@ public class Cliente extends Usuario {
 	private String direccion;
 	private String comuna;
 	private String telefono;
-	// sistemaSalud: 1 para Fonasa, 2 para Isapre.
+	// sistemaSalud: 1 para Fonasa, 2 para Isapres.
 	private int sistemaSalud;
 	
 	/**
@@ -172,6 +172,6 @@ public class Cliente extends Usuario {
 	@Override
 	public String toString() {
 		return "Cliente [" + super.toString() + "AFP = " + afp + ", Direccion = " + direccion + ", Comuna = " + comuna + ", Telefono = " + telefono
-				+ ", Sistema de salud = " + (sistemaSalud == 1 ? "Fonasa" : "Isapre") + "]";
+				+ ", Sistema de salud = " + (sistemaSalud == 1 ? "Fonasa" : "Isapres") + "]";
 	}
 }

@@ -15,15 +15,15 @@
             <% } %>
             <thead>
                 <tr>
-					<th>R.U.N.</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Fecha de nacimiento</th>
-					<th>A.F.P.</th>
-					<th>Direccion</th>
-					<th>Comuna</th>
-					<th>Telefono</th>
-					<th>Sistema de Salud</th>
+					<th class="small">R.U.N.</th>
+					<th class="small">Nombre</th>
+					<th class="small">Apellido</th>
+					<th class="small">Fecha de nacimiento</th>
+					<th class="small">A.F.P.</th>
+					<th class="small">Direccion</th>
+					<th class="small">Comuna</th>
+					<th class="small">Telefono</th>
+					<th class="small">Sistema de Salud</th>
 					<th></th>
 					<td><a href="formcliente" class="btn btn-info">Registrar</a></td>
                 </tr>
@@ -32,20 +32,19 @@
         <tbody>
         <% } %>
         <tr>
-			<td><%= cliente.getRun() %></td>
-			<td><%= cliente.getNombre() %></td>
-			<td><%= cliente.getApellido() %></td>
-			<td><%= cliente.getFechaNacimiento() %></td>
-			<td><%= cliente.getAfp() %></td>
-			<td><%= cliente.getDireccion() %></td>
-			<td><%= cliente.getComuna() %></td>
-			<td><%= cliente.getTelefono() %></td>
+			<td class="small"><%= cliente.getRun() %></td>
+			<td class="small"><%= cliente.getNombre() %></td>
+			<td class="small"><%= cliente.getApellido() %></td>
+			<td class="small"><%= cliente.getFechaNacimiento() %></td>
+			<td class="small"><%= cliente.getAfp() %></td>
+			<td class="small"><%= cliente.getDireccion() %></td>
+			<td class="small"><%= cliente.getComuna() %></td>
+			<td class="small"><%= cliente.getTelefono() %></td>
 			<% int sS = cliente.getSistemaSalud();
-			String sisS = null;
-			if (sS == 1) {sisS = "Fonasa";} else {sisS = "Isapres";}%>
-			<td><%= sisS %></td>
+			String sisS = sS == 1 ? "Fonasa" : "Isapres"; %>
+			<td class="small"><%= sisS %></td>
 			<td><a href="formeditarcliente?id=<%= cliente.getId() %>" class="btn btn-warning">Editar</a></td>
-			<td><a href="eliminarcliente?id=<%= cliente.getId() %>" class="btn btn-danger">Eliminar</a></td>
+			<td><a href="borrarcliente?id=<%= cliente.getId() %>" class="btn btn-danger">Borrar</a></td>
         </tr>
         <% count++; %>
         <% } %>

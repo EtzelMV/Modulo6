@@ -47,10 +47,15 @@ public class ClienteController {
     
     @RequestMapping(value = "/crearcliente", method = RequestMethod.POST)
     public String crearCliente(Cliente cliente, Locale locale, Model model) {
+    	
+    	Integer sistemaSalud = cliente.getSistemaSalud();
         
         if (cliente.getRun() != null && !cliente.getRun().isEmpty() && cliente.getNombre() != null && 
         !cliente.getNombre().isEmpty() && cliente.getApellido() != null && !cliente.getApellido().isEmpty() && 
-        cliente.getFechaNacimiento() != null && !cliente.getFechaNacimiento().isEmpty()) {
+        cliente.getFechaNacimiento() != null && !cliente.getFechaNacimiento().isEmpty() && cliente.getAfp() 
+        != null && !cliente.getAfp().isEmpty() && cliente.getDireccion() != null && !cliente.getDireccion().isEmpty()
+        && cliente.getComuna() != null && !cliente.getComuna().isEmpty() && cliente.getTelefono() != null 
+        && !cliente.getTelefono().isEmpty() && sistemaSalud != null && !String.valueOf(sistemaSalud).isEmpty()) {
         	
         	// Crear el cliente a traves del DAO
             clienteCreado = clienteService.create(cliente);
@@ -84,7 +89,7 @@ public class ClienteController {
     
     @RequestMapping(value = "/formeditarcliente", method = RequestMethod.GET)
     public String 	formEditarCliente(int id, Locale locale, Model model) {
-		logger.info("Mostrando formulario para crear un cliente.");
+		logger.info("Mostrando formulario para actualizar un cliente.");
 		
 		// Tomando data del cliente desde la base de datos
 		Cliente cliente = clienteService.getOne(id);
@@ -102,10 +107,15 @@ public class ClienteController {
     
     @RequestMapping(value = "/editarcliente", method = RequestMethod.POST)
     public String editarCliente(Cliente cliente, Locale locale, Model model) {
+    	
+    	Integer sistemaSalud = cliente.getSistemaSalud();
         
         if (cliente.getRun() != null && !cliente.getRun().isEmpty() && cliente.getNombre() != null && 
         !cliente.getNombre().isEmpty() && cliente.getApellido() != null && !cliente.getApellido().isEmpty() && 
-        cliente.getFechaNacimiento() != null && !cliente.getFechaNacimiento().isEmpty()) {
+        cliente.getFechaNacimiento() != null && !cliente.getFechaNacimiento().isEmpty() && cliente.getAfp() 
+        != null && !cliente.getAfp().isEmpty() && cliente.getDireccion() != null && !cliente.getDireccion().isEmpty()
+        && cliente.getComuna() != null && !cliente.getComuna().isEmpty() && cliente.getTelefono() != null 
+        && !cliente.getTelefono().isEmpty() && sistemaSalud != null && !String.valueOf(sistemaSalud).isEmpty()) {
         	
         	// Editar el cliente a traves del DAO
             clienteService.update(cliente);
@@ -116,8 +126,13 @@ public class ClienteController {
         
     }
     
-    @RequestMapping(value = "/eliminarcliente", method = RequestMethod.GET)
-    public String 	eliminarCliente(int id, Locale locale, Model model) {
+    @RequestMapping(value = "/borrarcliente", method = RequestMethod.GET)
+    public String 	borrarCliente(int id, Locale locale, Model model) {
+    	// Tomando data del cliente desde la base de datos
+    	Cliente cliente = clienteService.getOne(id);
+    	
+    	logger.info("El cliente (" + cliente.getRun() + ", " + cliente.getNombre() + ", " + 
+    			cliente.getApellido() + ") ha sido borrado.");
 		
 		// Eliminando cliente
 		clienteService.delete(id);
@@ -125,7 +140,7 @@ public class ClienteController {
 		fechaSistema(locale, model);
 		
 		// Establecer la pagina a incluir en la plantilla
-		model.addAttribute("contenido", "clienteEliminado.jsp");
+		model.addAttribute("contenido", "clienteBorrado.jsp");
 		
 		return "plantilla";
 	}
