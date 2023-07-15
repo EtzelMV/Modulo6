@@ -32,7 +32,7 @@
 			<td><%= usuario.getApellido() %></td>
 			<td><%= usuario.getFechaNacimiento() %></td>
 			<td><a href="formeditarusuario?id=<%= usuario.getId() %>" class="btn btn-warning">Editar</a></td>
-			<td><a href="eliminarusuario?id=<%= usuario.getId() %>" class="btn btn-danger">Eliminar</a></td>
+			<td><a href="borrarusuario?id=<%= usuario.getId() %>" class="btn btn-danger">Borrar</a></td>
         </tr>
         <% count++; %>
         <% } %>

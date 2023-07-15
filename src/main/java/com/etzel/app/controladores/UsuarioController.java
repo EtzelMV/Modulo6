@@ -119,8 +119,13 @@ public class UsuarioController {
         
     }
     
-    @RequestMapping(value = "/eliminarusuario", method = RequestMethod.GET)
-    public String 	eliminarUsuario(int id, Locale locale, Model model) {
+    @RequestMapping(value = "/borrarusuario", method = RequestMethod.GET)
+    public String 	borrarUsuario(int id, Locale locale, Model model) {
+    	// Tomando data del usuario desde la base de datos
+    	Usuario usuario = userService.getOne(id);
+    	
+    	logger.info("El usuario (" + usuario.getRun() + ", " + usuario.getNombre() + ", " + 
+    			usuario.getApellido() + ") ha sido borrado.");
 		
 		// Eliminando usuario
 		userService.delete(id);
@@ -128,7 +133,7 @@ public class UsuarioController {
 		fechaSistema(locale, model);
 		
 		// Establecer la pagina a incluir en la plantilla
-		model.addAttribute("contenido", "usuarioEliminado.jsp");
+		model.addAttribute("contenido", "usuarioBorrado.jsp");
 		
 		return "plantilla";
 	}

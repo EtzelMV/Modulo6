@@ -8,8 +8,7 @@
         <div class="col-md-3 mx-auto">
             <form class="custom-form" method="post" action="editarusuario">
             	<div class="form-group mb-3">
-		            <label for="id">Identificador:</label>
-		            <input type="text" class="form-control" id="id" name="id" value="${usuario.id}" readonly>
+		            <input type="hidden" class="" id="id" name="id" value="${usuario.id}" readonly>
 		        </div>
 				<div class="form-group mb-3">
 		            <label for="run">R.U.N.:</label>
@@ -29,8 +28,9 @@
 		            <label for="fechaNacimiento"><span class="text-danger">*</span>Fecha de Nacimiento:</label>
 		            <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento" 
 		            		value="${usuario.fechaNacimiento}" required>
+		            <div class="form-text">Ej: 17/07/1997</div>
 		        </div>
-				<button type="submit" class="btn btn-info">Guardar Cambios</button>
+				<button type="submit" class="btn btn-info">Actualizar</button>
 			</form>
         </div>
     </div>

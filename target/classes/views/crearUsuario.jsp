@@ -3,7 +3,7 @@
 <%@ page session="false" %>
 
 <div class="container">
-	<p class="h1 text-center">Crear Usuario</p>
+	<p class="h1 text-center">Registrar Usuario</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
             <form class="custom-form" method="post" action="crearusuario">
@@ -23,7 +23,7 @@
 					<label for="fechaNacimiento" class="form-label"><span class="text-danger">*</span>Fecha de nacimiento:</label>
 					<input type="text" class="form-control" placeholder="11/07/1999" id="fechaNacimiento" name="fechaNacimiento" required>
 				</div>
-				<button type="submit" class="btn btn-success">Guardar</button>
+				<button type="submit" class="btn btn-info">Guardar</button>
 			</form>
         </div>
     </div>

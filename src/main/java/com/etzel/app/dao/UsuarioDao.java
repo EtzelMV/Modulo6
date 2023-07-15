@@ -2,6 +2,7 @@ package com.etzel.app.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -54,11 +55,23 @@ public class UsuarioDao implements IUsuarioDao {
 
 	@Override
 	public List<Usuario> readAll() {
-		String query = "select id, run, nombre, apellido, fechaNacimiento "
-				+ "from usuario";
+		String query = "select id, run, nombre, apellido, fechaNacimiento, "
+				+ "afp, titulo, area from usuario";
     	
     	List<Usuario> usuarios = template.query(query, new UsuarioRowMapper());
     	
+    	/* 
+    	 * Solución con java 8 en adelante:
+    	 * clientes.removeIf(registro -> registro == null); 
+    	 */
+    	Iterator<Usuario> iterator = usuarios.iterator();
+        while (iterator.hasNext()) {
+        	Usuario registro = iterator.next();
+            if (registro == null) {
+                iterator.remove();
+            }
+        }
+        
     	if (usuarios.isEmpty()) {
     		
     		// Crear usuario por defecto
@@ -91,8 +104,8 @@ public class UsuarioDao implements IUsuarioDao {
 	@Override
 	public void update(Usuario user) {
 		
-		// Log para mostrar el usuario creado en el registro
-        logger.info("Usuario creado (Logger.info): {}", user);
+		// Log para mostrar el usuario actualizado en el registro
+        logger.info("Usuario actualizado (Logger.info): {}", user);
 
 		String query = "update usuario set nombre = ?, apellido = ?, "
 				+ "fechaNacimiento = ? where id = ?";
@@ -111,8 +124,17 @@ public class UsuarioDao implements IUsuarioDao {
 	
 	class UsuarioRowMapper implements RowMapper<Usuario> {
 	    public Usuario mapRow(ResultSet rs, int rowNum) throws SQLException {
-	        return new Usuario(rs.getInt("id"), rs.getString("run"), rs.getString("nombre"), 
-	                rs.getString("apellido"), rs.getString("fechaNacimiento"));
+	    	String afp = rs.getString("afp");
+	    	String titulo = rs.getString("titulo");
+	    	String area = rs.getString("area");
+	    	
+	    	if (afp == null && titulo == null && area == null) {
+	    		return new Usuario(rs.getInt("id"), rs.getString("run"), 
+	    				rs.getString("nombre"), rs.getString("apellido"), 
+	    				rs.getString("fechaNacimiento"));
+	    	} else {
+	    		return null;
+	    	}
 	    }
 	}
 }
