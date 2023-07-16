@@ -15,7 +15,7 @@
 	<header class="bg-dark text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-            	<div class="form-text">Clientes REST por aquí...</div>
+            	<div class="form-text">Clientes REST por aquí -> </div>
                 <a class="navbar-brand" href="crearclientesrest">Grupal 9</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

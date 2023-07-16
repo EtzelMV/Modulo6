@@ -61,7 +61,7 @@ public class UsuarioDao implements IUsuarioDao {
     	List<Usuario> usuarios = template.query(query, new UsuarioRowMapper());
     	
     	/* 
-    	 * Solución con java 8 en adelante:
+    	 * SoluciÃ³n con java 8 en adelante:
     	 * clientes.removeIf(registro -> registro == null); 
     	 */
     	Iterator<Usuario> iterator = usuarios.iterator();

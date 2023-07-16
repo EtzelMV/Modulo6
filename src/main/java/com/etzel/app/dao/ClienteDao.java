@@ -88,7 +88,7 @@ public class ClienteDao implements IClienteDao {
     	List<Cliente> clientes = template.query(query, new ClienteRowMapper());
     	
     	/* 
-    	 * Solución con java 8 en adelante:
+    	 * Solucion con java 8 en adelante:
     	 * clientes.removeIf(registro -> registro == null); 
     	 */
     	Iterator<Cliente> iterator = clientes.iterator();
@@ -166,7 +166,7 @@ public class ClienteDao implements IClienteDao {
 	                    rs.getString("direccion"), rs.getString("comuna"), rs.getString("telefono"), 
 	                    rs.getInt("sistemaSalud"));
 	        } else {
-	            return null; // Si afp es nulo, no se devuelve ningún objeto Cliente
+	            return null; // Si afp es nulo, no se devuelve ningun objeto Cliente
 	        }
 	    }
 	}

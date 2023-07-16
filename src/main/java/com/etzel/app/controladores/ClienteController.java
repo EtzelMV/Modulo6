@@ -101,7 +101,7 @@ public class ClienteController {
                 	
                 }
             } else {
-                System.out.println("Error en la conexión. Código de respuesta: " + response.getStatusCodeValue());
+                System.out.println("Error en la conexion. Codigo de respuesta: " + response.getStatusCodeValue());
             }
     	} catch (Exception e) {
             logger.error("Error al cargar clientes desde el servicio REST: " + e.getMessage());
