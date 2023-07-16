@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -8,7 +8,7 @@
 	<p class="h5">Spring Legacy Project | Spring MVC Project</p>
 	<p class="mt-3 mb-3">Spring Tool Suite (https://spring.io/tools) proporciona un excelente entorno para 
 	el desarrollo de aplicaciones que utilicen Spring Framework. Spring Tool Suite se integra sobre 
-	la plataforma Eclipse (http://www.eclipse.org/) y también da soporte al servidor web (en nuestro 
+	la plataforma Eclipse (http://www.eclipse.org/) y tambiÃ©n da soporte al servidor web (en nuestro 
 	caso Tomcat); sin embargo, podemos preparar el entorno desde el IDE Ecplise con las librerias 
 	necesarias.</p>
 		
@@ -32,21 +32,16 @@
 	       </div>
 	     </div>
 	     <div>
-	     	<p class="h5 text-center">El principio de la sabiduría es el temor de Jehová;
-			Los insensatos desprecian la sabiduría y la enseñanza.</p>
+	     	<p class="h5 text-center">El principio de la sabidurÃ­a es el temor de JehovÃ¡;
+			Los insensatos desprecian la sabidurÃ­a y la enseÃ±anza.</p>
 		 	<p class="h5 text-center">Proverbios 1:7 RVR1960</p>
 	     </div>
     </div>
     
 	<div class="mt-3">
-		<p class="mt-3 mb-3">La transferencia de estado representacional (en inglés representational state transfer) 
-		o REST es un estilo de arquitectura software para sistemas hipermedia distribuidos como la World Wide Web. El 
-		término se originó en el año 2000, en una tesis doctoral sobre la web escrita por Roy Fielding, uno de los 
-		principales autores de la especificación del protocolo HTTP y ha pasado a ser ampliamente utilizado por la 
-		comunidad de desarrollo.</p>
-		<p class="mt-3 mb-3">JSON (acrónimo de JavaScript Object Notation, «notación de objeto de JavaScript») es un
-		formato de texto sencillo para el intercambio de datos. Se trata de un subconjunto de la notación literal de 
-		objetos de JavaScript, aunque, debido a su amplia adopción como alternativa a XML, se considera (año 2019) un 
-		formato independiente del lenguaje.</p>
+		<p class="mt-3 mb-3">Spring nos provee de un cliente Rest, RestTemplate, muy sencillo de usar. Ã‰l se encarga
+		de realizar la conexiÃ³n http, lo Ãºnico que hace falta es pasarle la url del servicio contra el que conectar. 
+		El mismo RestTemplate gestiona sus propios â€˜messageConvertersâ€™, con los que parsear los datos enviados y 
+		recibidos de/a json, por ejemplo. Solo es necesario aÃ±adir en nuestro proyecto la dependencia necesaria.</p>
 	</div>
 </div>

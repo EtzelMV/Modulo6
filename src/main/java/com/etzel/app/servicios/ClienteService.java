@@ -25,8 +25,12 @@ public class ClienteService {
 		this.clienteDao = clienteDao;
 	}
 
-	public boolean  create(Cliente cliente) {
+	public boolean create(Cliente cliente) {
 		return clienteDao.create(cliente);
+	}
+	
+	public void createRest(Cliente cliente) {
+		clienteDao.createRest(cliente);
 	}
 	
 	public List<Cliente> getAll() {

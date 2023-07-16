@@ -31,7 +31,7 @@ public class ClienteRestController {
         return clienteDao.readAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/listadoclientes/{id}", method = RequestMethod.GET)
     public Cliente getCliente(@PathVariable int id) {
         return clienteDao.readOne(id);
     }
@@ -41,13 +41,13 @@ public class ClienteRestController {
         clienteDao.create(cliente);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/editarcliente/{id}", method = RequestMethod.PUT)
     public void updateCliente(@PathVariable int id, @RequestBody Cliente cliente) {
         cliente.setId(id);
         clienteDao.update(cliente);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/borrarcliente/{id}", method = RequestMethod.DELETE)
     public void deleteCliente(@PathVariable int id) {
         clienteDao.delete(id);
     }

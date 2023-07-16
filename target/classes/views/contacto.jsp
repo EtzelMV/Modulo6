@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -22,7 +22,7 @@
 				<div class="mb-3">
 					<label for="consulta" class="form-label"><span class="text-danger">*</span>Consulta:</label>
 					<textarea class="form-control" id="consulta" rows="5" 
-					placeholder="Ingrese el motivo de su consulta aquí..." name="consulta" required></textarea>
+					placeholder="Ingrese el motivo de su consulta aquÃ­..." name="consulta" required></textarea>
 				</div>
 				<button type="submit" class="btn btn-success">Guardar</button>
 			</form>

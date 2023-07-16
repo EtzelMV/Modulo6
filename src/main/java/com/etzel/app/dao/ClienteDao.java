@@ -55,6 +55,29 @@ public class ClienteDao implements IClienteDao {
             return false;
         }
 	}
+	
+	@Override
+	public void createRest(Cliente cliente) {
+		
+		try {
+    		// Declarando el query para insertar los datos del cliente
+            String query = "insert into usuariorest (run, nombre, apellido, fechaNacimiento, afp, direccion, "
+            		+ "comuna, telefono, sistemaSalud) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            template.update(query, cliente.getRun(), cliente.getNombre(), cliente.getApellido(), 
+            		cliente.getFechaNacimiento(), cliente.getAfp(), cliente.getDireccion(), 
+            		cliente.getComuna(), cliente.getTelefono(), cliente.getSistemaSalud());
+            
+            // Log para mostrar el cliente creado en el  registro
+            logger.info("Cliente creado (Logger.info): {}", cliente);
+            
+            // Mostrando el cliente creado por consola
+            System.out.println("Cliente creado (println y toString): " + cliente.toString());
+        } catch (Exception e) {
+        	
+        	// Registrando el error
+            logger.error("Error al crear el cliente: {}", e.getMessage());
+        }
+	}
 
 	@Override
 	public List<Cliente> readAll() {

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -14,7 +14,7 @@
 		            <label for="nombreCapacitacion">Capacitacion:</label>
 		            <input type="text" class="form-control" id="nombreCapacitacion" name="nombreCapacitacion" 
 		            value="${capacitacion.nombreCapacitacion}" readonly>
-		            <div class="form-text">Ingrese el nombre de la capacitación...</div>
+		            <div class="form-text">Ingrese el nombre de la capacitaciÃ³n...</div>
 		        </div>
 				<div class="form-group mb-3">
 		            <label for="horario"><span class="text-danger">*</span>Horario:</label>
