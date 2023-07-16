@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -15,7 +15,8 @@
 	<header class="bg-dark text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="api/listadoclientes">Grupal 8</a>
+            	<div class="form-text">Clientes REST por aqu√≠ -> </div>
+                <a class="navbar-brand" href="crearclientesrest">Grupal 9</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
                         <!-- Verificar si el usuario ha iniciado sesion -->
                         <c:if test="${pageContext.request.userPrincipal != null}">
 						    <li class="nav-item">
-						        <a class="nav-link" href="logout">Cerrar SesiÛn</a>
+						        <a class="nav-link" href="logout">Cerrar Sesi√≥n</a>
 						    </li>
 						</c:if>
                     </ul>
@@ -77,15 +78,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" 
-                            href="https://drive.google.com/file/d/1k7NZBMMNJvKrjtk-jzTbqnRPJ-ZZ1i9z/view?usp=sharing" 
-                            target="_blank">Criterio de evaluaciÛn</a>
+                            href="https://drive.google.com/file/d/1rFhknieuIIAhLpEnclhYKtIFPQHZkPqe/view?usp=sharing" 
+                            target="_blank">Criterio de evaluaci√≥n</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-5">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="https://my.bible.com/es" target="_blank">'El temor de Jehov· es aborrecer el mal; 
+                            <a class="nav-link text-white" href="https://my.bible.com/es" target="_blank">'El temor de Jehov√° es aborrecer el mal; 
                             	La soberbia y la arrogancia, el mal camino, Y la boca perversa, aborrezco.' Proverbios 8:13</a>
                         </li>
                     </ul>

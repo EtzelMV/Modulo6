@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
 <div class="container">
-	<p class="h1 text-center">Iniciar sesión</p>
+	<p class="h1 text-center">Iniciar sesiÃ³n</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
         <% 
@@ -18,7 +18,7 @@
 					<input type="text" class="form-control" placeholder="" id="usuario" name="usuario" required>
 				</div>
 				<div class="mb-3">
-					<label for="contrasenna" class="form-label"><span class="text-danger">*</span>Contraseña:</label>
+					<label for="contrasenna" class="form-label"><span class="text-danger">*</span>ContraseÃ±a:</label>
 					<input type="password" class="form-control" placeholder="" id="contrasenna" name="contrasenna" required>
 				</div>
 				<button type="submit" class="btn btn-primary">Ingresar</button>

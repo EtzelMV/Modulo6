@@ -64,19 +64,19 @@ public class CapacitacionDao implements ICapacitacionDao {
     		// Crear las capacitaciones por defecto
             Capacitacion capacitacion1 = new Capacitacion();
             capacitacion1.setIdCapacitacion(1);
-            capacitacion1.setNombreCapacitacion("Curso Básico Java");
+            capacitacion1.setNombreCapacitacion("Curso Basico Java");
             capacitacion1.setHorario("10:00 - 13:00");
             capacitacion1.setFechaCapacitacion("18/07/2023");
 
             Capacitacion capacitacion2 = new Capacitacion();
             capacitacion2.setIdCapacitacion(2);
-            capacitacion2.setNombreCapacitacion("Curso Básico MySQL");
+            capacitacion2.setNombreCapacitacion("Curso Basico MySQL");
             capacitacion2.setHorario("14:00 - 17:00");
             capacitacion2.setFechaCapacitacion("18/07/2023");
 
             Capacitacion capacitacion3 = new Capacitacion();
             capacitacion3.setIdCapacitacion(3);
-            capacitacion3.setNombreCapacitacion("Curso Básico HTML5 y Bootstrap");
+            capacitacion3.setNombreCapacitacion("Curso Basico HTML5 y Bootstrap");
             capacitacion3.setHorario("17:00 - 20:00");
             capacitacion3.setFechaCapacitacion("19/07/2023");
             

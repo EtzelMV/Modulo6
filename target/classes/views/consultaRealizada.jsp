@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
@@ -9,7 +9,7 @@
 			Estimado <%= request.getAttribute("nombre") %> <%= request.getAttribute("apellido") %></p>
 		<p class="h5">
 			En la brevedad de lo posible le estaremos dando respuesta a su correo
-			electrónico <%= request.getAttribute("email") %> con respecto a su consulta:
+			electrÃ³nico <%= request.getAttribute("email") %> con respecto a su consulta:
 		</p>
 		<p class="h5"><%= request.getAttribute("consulta") %></p>
 	</div>

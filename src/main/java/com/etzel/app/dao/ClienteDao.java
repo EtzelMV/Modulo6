@@ -55,6 +55,29 @@ public class ClienteDao implements IClienteDao {
             return false;
         }
 	}
+	
+	@Override
+	public void createRest(Cliente cliente) {
+		
+		try {
+    		// Declarando el query para insertar los datos del cliente
+            String query = "insert into usuariorest (run, nombre, apellido, fechaNacimiento, afp, direccion, "
+            		+ "comuna, telefono, sistemaSalud) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            template.update(query, cliente.getRun(), cliente.getNombre(), cliente.getApellido(), 
+            		cliente.getFechaNacimiento(), cliente.getAfp(), cliente.getDireccion(), 
+            		cliente.getComuna(), cliente.getTelefono(), cliente.getSistemaSalud());
+            
+            // Log para mostrar el cliente creado en el  registro
+            logger.info("Cliente creado (Logger.info): {}", cliente);
+            
+            // Mostrando el cliente creado por consola
+            System.out.println("Cliente creado (println y toString): " + cliente.toString());
+        } catch (Exception e) {
+        	
+        	// Registrando el error
+            logger.error("Error al crear el cliente: {}", e.getMessage());
+        }
+	}
 
 	@Override
 	public List<Cliente> readAll() {
@@ -65,7 +88,7 @@ public class ClienteDao implements IClienteDao {
     	List<Cliente> clientes = template.query(query, new ClienteRowMapper());
     	
     	/* 
-    	 * Solución con java 8 en adelante:
+    	 * Solucion con java 8 en adelante:
     	 * clientes.removeIf(registro -> registro == null); 
     	 */
     	Iterator<Cliente> iterator = clientes.iterator();
@@ -143,7 +166,7 @@ public class ClienteDao implements IClienteDao {
 	                    rs.getString("direccion"), rs.getString("comuna"), rs.getString("telefono"), 
 	                    rs.getInt("sistemaSalud"));
 	        } else {
-	            return null; // Si afp es nulo, no se devuelve ningún objeto Cliente
+	            return null; // Si afp es nulo, no se devuelve ningun objeto Cliente
 	        }
 	    }
 	}

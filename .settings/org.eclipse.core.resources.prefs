@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
 encoding//src/main/java/com/etzel/app/controladores/HomeController.java=UTF-8
+encoding//src/test/java=UTF-8
+encoding//webapp/views/home.jsp=UTF-8

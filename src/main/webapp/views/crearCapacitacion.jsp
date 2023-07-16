@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
 <div class="container">
-	<p class="h1 text-center">Crear Capacitaci髇</p>
+	<p class="h1 text-center">Crear Capacitaci贸n</p>
 	<div class="row">
         <div class="col-md-3 mx-auto">
             <form class="custom-form" method="post" action="crearcapacitacion">
 				<div class="mb-3">
-					<label for="nombreCapacitacion" class="form-label"><span class="text-danger">*</span>Capacitaci髇:</label>
-					<input type="text" class="form-control" placeholder="Ingrese el nombre de la capacitaci髇..." 
+					<label for="nombreCapacitacion" class="form-label"><span class="text-danger">*</span>Capacitaci贸n:</label>
+					<input type="text" class="form-control" placeholder="Ingrese el nombre de la capacitaci贸n..." 
 					id="nombreCapacitacion" name="nombreCapacitacion" required>
 				</div>
 				<div class="mb-3">
@@ -17,7 +17,7 @@
 					<input type="text" class="form-control" placeholder="10:00-13:00" id="horario" name="horario" required>
 				</div>
 				<div class="mb-3">
-					<label for="fechaCapacitacion" class="form-label"><span class="text-danger">*</span>Fecha de la capacitaci髇:</label>
+					<label for="fechaCapacitacion" class="form-label"><span class="text-danger">*</span>Fecha de la capacitaci贸n:</label>
 					<input type="text" class="form-control" placeholder="30/03/1999" id="fechaCapacitacion" name="fechaCapacitacion" required>
 				</div>
 				<button type="submit" class="btn btn-success">Guardar</button>

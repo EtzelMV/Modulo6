@@ -12,6 +12,8 @@ public interface IClienteDao {
 
 	public boolean create(Cliente cliente);
 	
+	public void createRest(Cliente cliente);
+	
 	public List<Cliente> readAll();
 	
 	public Cliente readOne(int id);
